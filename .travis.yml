@@ -1,0 +1,17 @@
+language: python
+
+branches:
+  only:
+  - source
+
+install:
+- pip install pelican
+- pip install markdown
+- pip install ghp-import
+
+script:
+- make publish github
+
+env:
+  global:
+    - secure: "USAKEq4925OlhJohAR6i/khbu9u2cwZRARjnVTbPbIbb4MHz40lWW+0W8AFFTIXccaEEELKSmGPcilp58Krh6wcNfK/a9VuHm4xr+m5HrNtFVLaWQURZAHZAM4ty39clDbrMcaiqlwmR+ofunmt5eiiujGdOqyGijPpUm/mUORg="
