@@ -13,10 +13,9 @@ TIMEZONE = 'Asia/Seoul'
 DEFAULT_LANG = 'ko'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_RSS = 'feeds/all.rss.xml'
-CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
-# FEED_ALL_ATOM = None
-# CATEGORY_FEED_ATOM = None
+# FEED_DOMAIN = 'http://feeds.feedburner.com/eastnwise/'
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -34,7 +33,7 @@ AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 THEME = 'pelican-theme'
 
