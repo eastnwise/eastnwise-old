@@ -10,7 +10,8 @@ install:
 - pip install ghp-import
 
 script:
-- make publish github
+- make publish
+- 'make github 2> /dev/null'
 
 env:
   global:
