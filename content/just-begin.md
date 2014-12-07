@@ -1,11 +1,9 @@
 Title: 그냥 시작하기
 Date: 2014-12-03 16:00
-Modified: 2014-12-03 16:00
+Modified: 14-12-07 17:36
 Category: life
-Tags: journal
+Tags: thought
 Slug: just-begin
-Authors: eastnwise
-Summary: 완벽한 준비는 없다. 우선 그냥 시작하자
 
 블로그를 다시 시작해보아야겠다고 계획했다가, 시작도 못하고 한달 정도 지난 거 같다. 핑계야 여러가지이지만, 가장 큰 이유 2가지는 어느 플랫폼을 선택하느냐는 문제와, 다른 하나는 어떤 글을 써야할까라는 문제였다. 
 
