@@ -1,19 +1,20 @@
 {% extends "base.html" %}
-
-{% block title %} {{ article.title }} | {{ SITENAME }} {% endblock %}
-
+{% block title %}{{ article.title|striptags }}{% endblock %}
 {% block content %}
-    <h1 class="title"> {{ article.title }}</h1>
-    <p class=date> {{ article.locale_date }} </p>
+<article>
+    <header>
+        <h3 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+        title="Permalink to {{ article.title|striptags }}">{{ article.title}}</a></h3>
+        {% include 'twitter.html' %}
+    </header>
+
+    {% include 'article_infos.html' %}
     {{ article.content }}
-    
-    {% include "twitter.html" %}
-    {% if article.tags %}
-    <p class=tags>This entry was tagged as
-      {% for tag in article.tags %}
-      <a href="/{{ tag.url }}">{{ tag }}</a>
-      {% endfor %}
-    </p>
+    {% include 'article_infos_bottom.html' %}
+
+    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+	<h4>Comments</h4>
+    {% include 'disqus_script.html' %}
     {% endif %}
-    {% include "disqus.html" %}
+</article>
 {% endblock %}
