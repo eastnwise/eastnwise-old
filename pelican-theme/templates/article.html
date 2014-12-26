@@ -1,32 +1,37 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+{% block description %}Title: {{ article.title }}; Date: {{ article.date|strftime('%Y-%m-%d') }}; Author: {{ article.author }}{% endblock %}
+{% block title %}{{ article.title }} — {{ SITENAME }}{% endblock %}
 {% block content %}
-<div role="main" class="content clearfix">	
-	<article>
-		<div class="post wrapper">
-			<h1>{{ article.title }}</h1>
-			{{ article.content }}
-			
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ TWITTER_USERNAME }}" data-lang="en" data-size="large" data-related="{{ TWITTER_USERNAME }}">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						
-			{% if DISQUS_SITENAME %}
-			<div class="comments">
-			<h2>Comments !</h2>
-			    <div id="disqus_thread"></div>
-			    <script type="text/javascript">
-			       var disqus_identifier = "{{ article.url }}";
-			       (function() {
-			       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			       dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-			       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			      })();
-			    </script>
-			</div>
-			{% endif %}			
-		</div>
-	
-	{% include 'metadata.html' %}
-	</article>	
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">{{ article.title }}</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">{{article.author or "Wilson Freitas"}}</h4>
+		</span>
+		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">{{ article.locale_date }}</time>
+	</div>
+	{% if article.category %}
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="{{ SITEURL }}/{{ article.category.url }}" rel="category">{{ article.category }}</a>
+		</span>
+	</div>
+	{% endif %}
+	{% if article.tags %} 
+	<div>
+		Tags:
+		{% for tag in article.tags %}
+		<span itemprop="keywords">
+			<a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
+		</span>
+		{% endfor %}
+	</div>
+	{% endif %}
+	<div itemprop="articleBody" class="article-body">{{ article.content }}</div>
+	<hr>
+	<h2>Comments</h2>
+	{% include "twitter.html" %}
+	{% include 'disqus.html' %}
 </div>
 {% endblock %}
