@@ -1,19 +1,13 @@
-{% extends "base.html" %}
-{% block title %}{{ page.title }}{% endblock %}
-{% block content %} 
-    <article class="post">
-        <header>
-                <small class="entry-meta">
-                    {% if PDF_PROCESSOR %}
-                    <a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">get the pdf</a>
-                    {% endif %}                   
-                </small></header>
-                <br>
-                {{ page.content }}
-                <hr>
-                    <ol class="breadcrumb">
-                      <li><a href="{{ SITEURL }}">Regresar</a></li>
-                    </ol>    
-                <hr>                  
-    </article> 
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} | {{ SITENAME }} {% endblock %}
+{% block content %}
+<div>
+  <article role="article">
+    <header>
+      {% include '_includes/qr_code.html' %}
+      <h1 class="entry-title">{{ page.title }}</h1>
+    </header>
+    {{ page.content }}
+  </article>
+</div>
 {% endblock %}
