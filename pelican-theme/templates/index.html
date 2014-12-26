@@ -7,7 +7,7 @@
         {# First item #}
         {% if loop.first and not articles_page.has_previous() %}
             <article>
-                <a href="{{ SITEURL }}/{{ article.url }}"><h1 class="article-title">{{ article.title }}</h1></a>
+                <a href="{{ SITEURL }}/{{ article.url }}"><h3 class="article-title">{{ article.title }}</h3></a>
                 {% include 'article_infos.html' %}{{ article.content }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
             </article>
 
@@ -23,7 +23,7 @@
         {% else %}
 
             <article>
-                <a href="{{ SITEURL }}/{{ article.url }}"><h1 class="article-title">{{ article.title }}</h1></a>
+                <a href="{{ SITEURL }}/{{ article.url }}"><h3 class="article-title">{{ article.title }}</h3></a>
                 {% include 'article_infos.html' %}{{ article.summary }}{% include 'article_infos_bottom.html' %}{% include 'comments.html' %}
                 <a class="button radius secondary small right" href="{{ SITEURL }}/{{ article.url }}">Read More</a>
                 <hr  class="gradient"/>
@@ -40,7 +40,7 @@
 
 {% else %}
 
-    <h1>Pages</h1>
+    <h3>Pages</h3>
     {% for page in PAGES %}
         <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
     {% endfor %}
