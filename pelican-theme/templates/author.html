@@ -1,2 +1,6 @@
 {% extends "index.html" %}
-{% block title %}{{ SITENAME }} <small>{{ author }}</small>{% endblock %}
+{% block title %}&ndash; Posts by: {{ author }}{% endblock %}
+
+{% block header %}
+&gt; Author: {{ author }}
+{% endblock %}
