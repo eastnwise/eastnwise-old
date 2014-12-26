@@ -1,15 +1,28 @@
 {% extends "base.html" %}
-{% block title %}&ndash; Archives{% endblock %}
-
 {% block content %}
-<article>
-  <div class="article_text">
-    <dl>
-      {% for article in dates %}
-      <dt>{{ article.locale_date }}</dt>
-      <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-      {% endfor %}
-    </dl>
-  </div>
-</article>
+            <article class="post">
+                <div class="post-item">
+                    <div class="post-content">   
+                        <header><h3>Archives for: {{ SITENAME }}</h3></header>
+                        <dl>
+                        {% for article in dates %}
+                            <dt>{{ article.locale_date }}</dt>
+                            <dd><a href='{{ article.url }}' data-toggle="tooltip" data-placement="right" title="View {{ article.title }}">{{ article.title }}</a></dd>
+			    <dd>{{ article.summary }}</dd>
+                        {% endfor %}
+                        </dl>
+                    </div>    
+                </div>
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- bloio -->
+                            <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-7127443823639155"
+                            data-ad-slot="9038513565"
+                            data-ad-format="auto"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>                 
+            </article> 
+
 {% endblock %}

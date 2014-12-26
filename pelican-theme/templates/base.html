@@ -1,92 +1,308 @@
 <!DOCTYPE html>
-<html lang="{{ DEFAULT_LANG }}">
-
+<html lang="en">
 <head>
-  <!-- ## for client-side less
-  <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/theme/css/style.less">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
-  -->
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="{{ AUTHOR }}">
-  <meta name="description" content="Posts and writings by {{ AUTHOR }}">
-
-  {% if FEED_ALL_ATOM %}
-  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom" />
-  {% endif %}
-  {% if FEED_ALL_RSS %}
-  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS" />
-  {% endif %}
-
-  {% block head %}
-  {% endblock %}
-
-  <title>
-    {{ SITENAME }}
-    {% block title %}{% endblock %}
-  </title>
-
-  {% include "modules/analytics.html" %}
-</head>
-
-<body>
-  <aside>
-    <div id="user_meta">
-      <a href="{{ SITEURL }}">
-        {% if USER_LOGO_URL %}
-        <img src="{{ USER_LOGO_URL }}" alt="logo">
-        {% else %}
-        <img src="{{ SITEURL }}/theme/images/logo.png" alt="logo">
+    <meta charset="utf-8">
+<!--
+       _          _  _                                 
+  __ _| |__  _ __| || |__  ____ _ ___   ___  _ __ __ _ 
+ / _` | '_ \| '__| || |\ \/ / _` / __| / _ \| '__/ _` |
+| (_| | |_) | |  |__   _>  < (_| \__ \| (_) | | | (_| |
+ \__,_|_.__/|_|     |_|/_/\_\__,_|___(_)___/|_|  \__, |
+                                                 |___/ 
+-->    
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css" >
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css" type="text/css" >  
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.min.css" type="text/css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="http://static.abr4xas.org/logo.png">
+    <meta name="google-site-verification" content="{{ GOOGLE_SV }}" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="medium" content="mult">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="pragma" content="cache" />
+    <meta http-equiv="cache-control" content ="cache" />
+    <meta name="adblock" content="disable" />
+    <meta name="rating" content="General" />
+    <meta name="resource-type" content="document" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="revisit" content="1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/" />
+    <meta http-equiv="vary" content="content-language" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <link rel="publisher" href="https://plus.google.com/+Abr4xasOrg"/>
+{# Open Graph tags #}
+    {% if USE_OPEN_GRAPH is not defined %}
+        {% set USE_OPEN_GRAPH = True %}
+    {% endif %}
+{% if USE_OPEN_GRAPH %}
+<!-- Open Graph tags -->
+{% if OPEN_GRAPH_FB_APP_ID %}
+    <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+{% endif %}
+        <meta name="twitter:card" content="summary"> 
+        <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
+        <meta property="og:site_name" content="{{ SITENAME }}" />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:locale:alternate" content="en_GB" />
+    {% if article %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">     
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{ article.title|striptags }}"/>
+        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/> 
+        <meta property="og:description" content="{{ article.summary|striptags|escape }}"/>
+        <meta property="article:published_time" content="{{ article.date.strftime("%Y-%m-%d") }}" />
+        <meta name="twitter:title" content="{{ article.title|striptags }}">
+        <meta name="twitter:description" content="{{ article.summary|striptags|escape }}">  
+        <meta name="description" content="{{ article.summary|striptags|escape }}">
+        <meta name="twitter:creator" content="@{{ article.twitter }}">
+        <meta name="twitter:image" content="{{ SITEURL }}/{{ article.image }}">  
+        <meta property="og:image" content="{{ SITEURL }}/{{ article.image }}"/>   
+        {% if article.category %}
+            <meta property="article:section" content="{{ article.category }}" />
         {% endif %}
-      </a>
-      <h2><a href="{{ SITEURL }}">{{ AUTHOR }}</a></h2>
-      <p>{{ TAGLINE }}</p>
-      <ul>
-        {% for title, link in MENUITEMS %}
-        <li><a href="{{ link }}">{{ title }}</a></li>
+        {% for tag in article.tags %}
+            <meta property="article:tag" content="{{ tag }}" />
         {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}{% for p in pages %}
-        <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-        {% endfor %}{% endif %}
-        {% for name, link in LINKS %}
-        <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
-        {% endfor %}
-        {% for name, link in SOCIAL %}
-        <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </aside>
+        {% if article.author %}
+            <meta property="article:author" content="{{ article.author }}" />
+        {% endif %}
+    {% elif page %}
+        <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}">    
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{ page.title }}"/>
+        <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
+        <meta property="og:image" content="{{ SITEURL }}/theme/images/logo.png" />
+        <meta name="twitter:image" content="{{ SITEURL }}/theme/images/logo.png" /> 
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">    
+    {% else %}
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="{{ SITENAME }}"/>
+        <meta property="og:url" content="{{ SITEURL }}"/>
+        <meta property="og:description" content="El blog de abr4xas, blog sobre noticias, tecnología, música, gnu/linux, anime, actualidad, intercambio y directorio de informacion de servicios profesionales en tecnología. Eventos, Asesorias Software Libre"/>
+        <link rel="canonical" href="{{ SITEURL }}">    
+        <meta property="og:image" content="{{ SITEURL }}/theme/images/logo.png" />
+        <meta name="twitter:image" content="{{ SITEURL }}/theme/images/logo.png" /> 
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta name="description" content="El blog de abr4xas, blog sobre noticias, tecnología, música, gnu/linux, anime, actualidad, intercambio y directorio de informacion de servicios profesionales en tecnología. Eventos, Asesorias Software Libre">    
+        {% if OPEN_GRAPH_IMAGE %}
+            <meta property="og:image" content="{{ SITEURL }}/theme/images/logo.png" />
+            <meta name="twitter:image" content="{{ SITEURL }}/theme/images/logo.png" /> 
+            <meta property="og:image:type" content="image/png">
+            <meta property="og:image:width" content="300">
+            <meta property="og:image:height" content="300">
+        {% endif %}
+    {% endif %}
+{% endif %}    
+    <link type="text/plain" rel="socialmedia" href="http://abr4xas.org/socialmedia.txt" />
+{% if FEED_RSS %}
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+{% endif %}
+    
+<!-- icons -->
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico">
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ SITEURL }}/theme/images/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ SITEURL }}/theme/images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ SITEURL }}/theme/images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ SITEURL }}/theme/images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ SITEURL }}/theme/images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ SITEURL }}/theme/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ SITEURL }}/theme/images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ SITEURL }}/theme/images/apple-touch-icon-57x57.png" />   
+<!--/ icons -->
+</head>
+<body>
+    <section class="container-fluid">
 
-  <main>
-    <header>
-      <p>
-      <a href="{{ SITEURL }}">Index</a> &brvbar; <a href="{{ SITEURL }}/archives.html">Archives</a>
-      {% if FEED_ALL_ATOM %}
-      &brvbar; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
-      {% endif %}
-      {% if FEED_ALL_RSS %}
-      &brvbar; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS</a>
-      {% endif %}
-      {% block header %}
-      {% endblock header %}
-      </p>
-    </header>
+        <header class="row logo">
+                    <div class="container">
+          <div class="col-md-12">
+              <nav class="navbar navbar navbar-inverse" role="navigation">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                    <a href="{{ SITEURL }}/" class="navbar-brand sitename text-uppercase">
+                        {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" /> {% endif %}
+                        {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
+                    </a>
+                </div>
+                {% if DISPLAY_PAGES_ON_MENU %}
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-    {% block content %}
-    {% endblock %}
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ SITEURL }}/">Inicio</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">P&aacute;ginas <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        {% for p in PAGES %}
+                        <li{% if p == page %} class="active"{% endif %}>
+                            <a href="{{ SITEURL }}/{{ p.url }}" title="{{ p.title }}">{{ p.title }}</a>
+                        </li>
+                        {% endfor %}
+                        <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}" title="Publicaciones Archivadas"> Archivos</a></li>  
+                      </ul>
+                    </li>
+                    {% if FEED_RSS %}
+                        <li>
+                            <a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate" title="RSS feed">
+                                <i class="fa fa-rss alizarin"></i> RSS
+                            </a>
+                        </li>    
+                    {% endif %}                     
+                  </ul>                  
+                </div>
+                {% endif %}
+              </div>
+            </nav>            
+          </div>
+            </div>
+        </header> 
+        <section class="content">
+            <div class="container">
+                <section class="col-md-8">
+                    <div class="row">        
+                        {% block content %}
+                        {% endblock %}   
+                    </div><!--/ row -->       
+                    {% include 'pagination.html' %}                    
+                </section><!--/ col-md-8 col-xs-12 -->
+                
+                <aside class="col-md-4">
 
-    {% block footer %}
-    {% endblock %}
+                    <div class="well hidden-xs hidden-sm">                 
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!--     bloio -->
+    <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-7127443823639155"
+    data-ad-slot="9038513565"
+    data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script> 
+                        <h3 class="widget-title"> Blogroll</h3>
+                        <ul class="nav nav-pills nav-stacked">
+                            {% for name, link in LINKS %}
+            <li><a href="{{ link }}" target="_blank" title="Visitar: {{ name }}">{{ name }} </a></li>
+                            {% endfor %}
+                        </ul>
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
 
-    <div id="ending_message">
-      <p>&copy; {{ AUTHOR }}. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. {% if INTERNET_DEFENSE_LEAGUE %}Member of the <a href="http://internetdefenseleague.org">Internet Defense League</a>{% endif %}.</p>
-    </div>
-  </main>
-  {% include "modules/idl.html" %}
-</body>
+                <h3 class="widget-title"> <i class="fa fa-folder"></i> Categorias</h3>
+
+                <ul class="list-inline">
+                    {% for cat, null in categories %}
+                    <li>
+                        <a href="{{ SITEURL }}/{{ cat.url }}" class="btn btn-xs btn-inverse cat" title="{{ cat | capitalize }}">{{ cat | capitalize }}  </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+        {% endif %}  
+                       
+<h3 class="widget-title"><i class="fa fa-users"></i> Social</h3>
+<div class="btn-group btn-group-justified">
+    <a href="https://twitter.com/abr4xas" target="_blank" class="btn btn-default"><i class="fa fa-twitter"></i></a>
+    <a href="//plus.google.com/u/0/114421218709488512484" target="_blank" class="btn btn-default" data-rel="publisher"><i class="fa fa-google-plus"></i></a>
+</div>                        
+<h3 class="widget-title"><i class="fa fa-envelope"></i> Subscribe to our mailing list</h3>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+	<form action="//abr4xas.us9.list-manage.com/subscribe/post?u=fdeefceb4eca2aeddc6adab92&amp;id=b151a36f20" method="post" class="form-horizontal" role="form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <input type="email" value="" name="EMAIL" class="form-control" placeholder="Email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-default">Subscribe</button>
+        </div>
+      </div>        
+	</form>
+</div>
+<!--End mc_embed_signup-->        
+        <h3 class="widget-title"> <i class="fa fa-coffee"></i> Me compras un caf&eacute;?</h3>
+<p class="text-justify">
+
+    <small>
+
+        Gracias a tus donaciones puedo cubrir los gastos de hosting y dominio.. Si deseas donar, dale un clic al cerdito!! Gracias :D 
+
+    </small>
+
+</p>
+        <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="RKG8G3ABP4XSW">
+            <input type="image" src="{{ SITEURL }}/theme/images/1412723932_money_box.svg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        </form>                          
+					<h3 class="widget-title"><i class="fa fa-exclamation-triangle alizarin"></i> Pol&iacute;tica de Cookies</h3>
+<p class="text-justify"><small>Este sitio web utiliza cookies propias y de terceros para optimizar tu navegaci&oacute;n, adaptarse a tus preferencias y realizar labores anal&iacute;ticas. Al continuar navegando aceptas esta politica.</small></p>    
+
+                        
+    <h3 class="widget-title">Licencia de uso</h3>
+<p>
+<small>
+Content licensed under a
+<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons by-nc-sa 4.0 International License</a>, except where indicated otherwise.
+</small>
+</p>                     
+                        
+                        
+                        
+                    </div>                    
+               
+                </aside>    
+    
+        </div>
+        </section><!--/ content -->
+        <footer>
+            <div class="row">
+                <div class="col-md-12 copy">
+                <p>Proudly powered by <a title="" data-placement="bottom" data-toggle="tooltip" target="_blank" href="http://getpelican.com/" data-original-title="Go to getpelican.com">pelican</a>, which takes great advantages of <a title="" data-placement="bottom" data-toggle="tooltip" target="_blank" href="http://python.org" data-original-title="Go to python.org">python</a>. </p>               
+                </div>
+            </div>
+        </footer>       
+</section><!-- /container -->        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- compiled and minified Bootstrap JavaScript -->
+        <script src="/theme/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{GOOGLE_ANALYTICS}}', 'auto');
+      ga('send', 'pageview');
+    var _qevents = _qevents || [];
+</script> 
+    
+    </body>
 </html>

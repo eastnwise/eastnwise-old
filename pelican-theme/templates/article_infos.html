@@ -1,0 +1,6 @@
+<i class="fa fa-calendar"></i> <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time> 
+        {% if article.author %}
+                <i class="fa fa-user"></i> <a href="{{ SITEURL }}/{{ article.author.url }}" data-toggle="tooltip" data-placement="bottom" title="{{ article.author }}">{{ article.author }}</a>
+        {% endif %}
+<i class="fa fa-folder"></i> <a href="{{ SITEURL }}/{{ article.category.url }}" data-toggle="tooltip" data-placement="bottom" title="{{ article.category }}">{{ article.category }}</a>. {% if PDF_PROCESSOR %}<a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">get the pdf</a>{% endif %}
+{% include 'translations.html' %}

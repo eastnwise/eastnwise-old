@@ -1,22 +1,29 @@
 {% extends "base.html" %}
+{% block content_title %}{% endblock %}
 {% block content %}
-{% for article in articles_page.object_list %}
-<article>
-  <div class="article_title">
-    <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
-  </div>
-  <div class="article_text">
-    {{ article.summary }}
-  </div>
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+<article class="row item">
+            <div class="col-md-4">
+              <a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.title }}">
+              <figure>
+                <img class="media-object" src="{{ article.image }}" alt="{{ article.title }}">
+              </figure>    
+              </a>
+            </div>
+            <div class="col-md-8">
+                            <header>
+                                <h3 class="media-heading post-title"><a href="{{ SITEURL }}/{{ article.url }}" data-toggle="tooltip" data-placement="bottom" title="{{ article.title }}">{{ article.title }}</a></h3>
+                                <small class="entry-meta">
+                                    {% include 'article_infos.html' %}                    
+                                </small>
+                            </header> 
+                {{ article.summary }}
+                
+            </div>
 </article>
-{% if not loop.last %}
-<hr />
-{% endif %}
-{% endfor %}
-{% endblock %}
 
-{% block footer %}
-<footer>
-  {% include "modules/pagination.html" %}
-</footer>
-{% endblock %}
+        {% endfor %}
+    {% endif %}
+{% endblock content %}
+
