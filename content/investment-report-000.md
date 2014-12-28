@@ -12,26 +12,6 @@ Slug: investment-report-000
 
 실패는 성공을 위한 필수불가결한 과정입니다. 다만, 마지막에 성공하느냐 아니냐는 수많은 실패의 경험을 성공을 위한 자양분으로 만들었는 지 못 만들었는 지에 따라 달라진다고 생각합니다. 드라마 '미생'의 장그래가 하루 대국을 스크랩하고 복기했던 것, 수험생이 오답노트를 만드는 것 등이 같은 맥락의 행동들입니다. 주식투자에 적용해보면, 투자에 대한 기록을 남기고 다시 검토해보는 것이 아닐까 생각합니다. 
 
-한 주식 커뮤니티에서 우연히 옥용서시[^1]님의 투자보고라는 글을 보게되었습니다. 옥용서시님은 18년 동안 KODEX200 1만주를 모으는 것을 목표라고 합니다. 이 글을 쓰는 시점까지 총 79개월(6.5년)동안 매달 그 기록을 공개하고 있습니다.
+한 주식 커뮤니티에서 우연히 [옥용서시](http://bbs.moneta.co.kr/nbbs/bbs.normal.lst.screen?p_message_id=&p_bbs_id=N10415&p_page_num=1&p_current_sequence=zzzzz~&p_start_sequence=zzzzz~&p_start_page=1&direction=1&p_favor_avoid=&service=fund&menu=&depth=0&sub=1&top=6&p_action=lst&p_tp_board=&total=&p_hot_fg=&cntnum=&p_total=49&p_beg_item=%EA%B8%B0%ED%83%80&p_search_field=REG_ID&p_search_word=egloo)님의 투자보고라는 글을 보게되었습니다. 옥용서시님은 18년 동안 KODEX200 1만주를 모으는 것을 목표라고 합니다. 이 글을 쓰는 시점까지 총 79개월(6.5년)동안 매달 그 기록을 공개하고 있습니다.
 
-제가 긴 이 글을 쓰게 된 결론입니다. 저도 투자에 성공하기 위해서 옥용서시님을 따라하고자 합니다. 성공의 목표는 투자수익은 아닙니다. 옥용서시님처럼요. 투자를 멈추는 날까지 끊임없는 기록하고 자아성찰을 하는 것입니다. 
-
-## 투자방법
-- 매매횟수 : 월 1회 (리밸런싱 포함)
-- 투자대상 : ETF
-- 투자기간 : 0개월 (2014-12-26)
-
-## 평가내역
-| 종목명                     | 평균매입가 | 비중 | 평가손익 |
-|----------------------------|-----------:|-----:|---------:|
-| TIGER  배당성장            | 115,980    | 40%  | 0.09%    |
-| KOSEF 10년 국고채 레버리지 | 13,610     | 60%  | -0.03%   |
-| 합계                       |            |      | 0.04%    |
-
-## 매매내역
-| 일자       | 종목명          | 거래 구분 | 사유     |
-|------------|-----------------|:---------:|:--------:|
-| 2014-12-26 | TIGER  배당성장 | 매수      | 신규추가 |
-|이월        | KOSEF 10년 국고채 레버리지 | 보유      |     |
-
-[^1]: [옥용서시님의 경과보고 목록 링크 바로가기](http://bbs.moneta.co.kr/nbbs/bbs.normal.lst.screen?p_message_id=&p_bbs_id=N10415&p_page_num=1&p_current_sequence=zzzzz~&p_start_sequence=zzzzz~&p_start_page=1&direction=1&p_favor_avoid=&service=fund&menu=&depth=0&sub=1&top=6&p_action=lst&p_tp_board=&total=&p_hot_fg=&cntnum=&p_total=49&p_beg_item=%EA%B8%B0%ED%83%80&p_search_field=REG_ID&p_search_word=egloo)
+제가 긴 이 글을 쓰게 된 결론입니다. 저도 투자에 성공하기 위해서 옥용서시님을 따라하고자 합니다. 성공의 목표는 투자수익은 아닙니다. 옥용서시님처럼요. 투자를 멈추는 날까지 끊임없는 기록하고 자아성찰을 하는 것입니다.
