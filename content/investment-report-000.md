@@ -14,6 +14,6 @@ Slug: investment-report-000
 
 한 주식 커뮤니티에서 우연히 [옥용서시님의 투자보고][1]라는 글을 보게되었습니다. 옥용서시님은 18년 동안 KODEX200 1만주를 모으는 것을 목표라고 합니다. 이 글을 쓰는 시점까지 총 79개월(6.5년)동안 매달 그 기록을 공개하고 있습니다.
 
-제가 긴 이 글을 쓰게 된 결론입니다. 저도 투자에 성공하기 위해서 옥용서시님을 따라하고자 합니다. 성공의 목표는 투자수익은 아닙니다. 옥용서시님처럼요. 투자를 멈추는 날까지 끊임없는 기록하고 자아성찰을 하는 것입니다.
+이 글을 쓰게 된 결론입니다. 저도 투자에 성공하기 위해서 옥용서시님을 따라하고자 합니다. 성공의 목표는 투자수익은 아닙니다. 옥용서시님처럼요. 투자를 멈추는 날까지 끊임없는 기록하고 자아성찰을 하는 것입니다.
 
 [1]: http://bbs.moneta.co.kr/nbbs/bbs.normal.lst.screen?p_message_id=&p_bbs_id=N10415&p_page_num=1&p_current_sequence=zzzzz~&p_start_sequence=zzzzz~&p_start_page=1&direction=1&p_favor_avoid=&service=fund&menu=&depth=0&sub=1&top=6&p_action=lst&p_tp_board=&total=&p_hot_fg=&cntnum=&p_total=49&p_beg_item=%EA%B8%B0%ED%83%80&p_search_field=REG_ID&p_search_word=egloo
