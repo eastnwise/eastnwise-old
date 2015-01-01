@@ -16,32 +16,58 @@
 <body>
 
 <!-- Nav Bar -->
-<nav>
-<div class="top-bar">
-<div class="row">
-    <div class="large-9 large-centered columns">
-	    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
-    </div>
-</div>
-</div>
+<nav class="top-bar" data-topbar role="navigation">
+	<ul class="title-area">
+		<li class="name">
+			<h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	</ul>
 
-<!-- Show menu items and pages -->
-<div class="row">
-<div class="large-9 columns">
-    <ul class="button-group navigation">
-	{% for title, link in MENUITEMS %}
-    <li><a href="{{ link }}" class="button secondary small">{{ title }}</a></li>
-    {% endfor %}
+	<section class="top-bar-section">
 
-    {% if DISPLAY_PAGES_ON_MENU %}
-        {% for page in PAGES %}
-            <li><a href="{{ SITEURL }}/{{ page.url }}" class="button secondary small">{{ page.title }}</a></li>
-        {% endfor %}
-    {% endif %}
-    </ul>
-</div>
-</div>
+	<!-- Show menu items and pages -->
+	<ul class="button-group right">
+		<li><a href="{{ SITEURL }}/archives.html">Archives</a>
+		<li><a href="{{ SITEURL }}/tags.html">Tags</a>
+		{% for title, link in MENUITEMS %}
+			<li><a href="{{ link }}">{{ title }}</a></li>
+		{% endfor %}
+
+		{% if DISPLAY_PAGES_ON_MENU %}
+			{% for page in PAGES %}
+				<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+			{% endfor %}
+		{% endif %}
+	</ul>
+	</section>
 </nav>
+{# <nav> #}
+{# <div class="top-bar"> #}
+{# <div class="row"> #}
+{#     <div class="large-9 large-centered columns"> #}
+{# 	    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1> #}
+{#     </div> #}
+{# </div> #}
+{# </div> #}
+{#  #}
+{# <!-- Show menu items and pages --> #}
+{# <div class="row"> #}
+{# <div class="large-9 columns"> #}
+{#     <ul class="button-group navigation"> #}
+{# 	{% for title, link in MENUITEMS %} #}
+{#     <li><a href="{{ link }}" class="button secondary small">{{ title }}</a></li> #}
+{#     {% endfor %} #}
+{#  #}
+{#     {% if DISPLAY_PAGES_ON_MENU %} #}
+{#         {% for page in PAGES %} #}
+{#             <li><a href="{{ SITEURL }}/{{ page.url }}" class="button secondary small">{{ page.title }}</a></li> #}
+{#         {% endfor %} #}
+{#     {% endif %} #}
+{#     </ul> #}
+{# </div> #}
+{# </div> #}
+{# </nav> #}
 <!-- End Nav -->
 
 
