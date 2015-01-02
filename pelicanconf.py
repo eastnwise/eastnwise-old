@@ -45,5 +45,5 @@ ARTICLE_SAVE_AS = 'posts/{slug}.html'
 
 DATE_FORMATS = {
     'en': '%a, %d %b %Y',
-    'ko': '%Y-%m-%d(%a)',
+    'ko': '%Y-%m-%d (%a)',
 }

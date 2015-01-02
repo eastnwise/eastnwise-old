@@ -1,6 +1,6 @@
 Title: 투자보고 [0회차] : 시작
 Date: 2014-12-26 13:13
-Tags: investment, report, 투자
+Tags: investment, report
 Category: finance
 Slug: investment-report-000
 

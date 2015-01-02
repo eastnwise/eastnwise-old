@@ -1,8 +1,7 @@
-
 Title: 새해에는 좋은 습관을 만들자
 Date: 2015-01-01 20:40
-Category: life
 Tags: opinion
+Category: life
 Slug: create-habits
 
 2015년 새해입니다. 
