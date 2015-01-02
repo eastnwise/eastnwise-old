@@ -1,7 +1,7 @@
 Title: 투자보고 [0회차] : 시작
 Date: 2014-12-26 13:13
-Tags: report
-Category: investment
+Tags: investment, report, 투자
+Category: finance
 Slug: investment-report-000
 
 2005년 12월부터 주식투자를 시작했었으니, 꼭 9년 째입니다. Beginner's Luck으로 시장 대비 큰 수익을 낸 적도 있었고, 중국시장의 거품 붕괴, 미국의 서브프라임 사태, 일본의 원전유출 등의 사건으로 인한 폭락에 엄청난 손실을 입은 적도 있었습니다. 한참 가치투자에 열을 올릴 때에는 종목에 대한 확신 때문에 주가가 계속 떨어져도 뚝심으로 보유하다가, 1/5토막 나고서야 주식을 처분한 적도 있었습니다. 
