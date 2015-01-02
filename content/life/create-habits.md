@@ -34,19 +34,19 @@ Slug: create-habits
 
 끝으로, [Zen habits][1]라는 블로그의 [포스팅][2]글 하나 공유합니다. 바쁘신 분들은 아래 요약만 보세요.
 
-- 어메이징한 2015년을 만드는 5가지 아이디어
-	1. 목표나 각오를 세우지 말고, 습관을 만들자. (한달에 1개씩)
-	2. (1개의 습관들이기에) 전념을 다하자.
-	3. (월이나 연단위가 아닌) 주단위로 점검하자. 
-	4. 같이 할 수 있는 사람을 찾아라.
-	5. (일년동안) 늘 호기심 많고, 배우고자 하는 자세를 유지하자.
+##### 어메이징한 2015년을 만드는 5가지 아이디어
+1. 목표나 각오를 세우지 말고, 습관을 만들자. (한달에 1개씩)
+2. (1개의 습관들이기에) 전념을 다하자.
+3. (월이나 연단위가 아닌) 주단위로 점검하자. 
+4. 같이 할 수 있는 사람을 찾아라.
+5. (일년동안) 늘 호기심 많고, 배우고자 하는 자세를 유지하자.
 
-- 5 Ideas to Create an Amazing 2015
-	1. Create habits, not goals or resolutions.
-	2. Be all in. 
-	3. Focus on weekly adaptations. 
-	4. Find your crew. 
-	5. Fill your year with curiosity and a learning stance.
+##### (원문) 5 Ideas to Create an Amazing 2015
+1. Create habits, not goals or resolutions.
+2. Be all in. 
+3. Focus on weekly adaptations. 
+4. Find your crew. 
+5. Fill your year with curiosity and a learning stance.
 		
 출처 : Zen habits by Leo Babauta
 
