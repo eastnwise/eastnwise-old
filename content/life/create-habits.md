@@ -32,21 +32,21 @@ Slug: create-habits
 
 저는 "습관을 바꾸면 인생이 바뀐다"라는 말을 매우 신봉하고 있습니다. 물론 습관을 들이는 거 자체가 만만치 않습니다. 원래 말보다 행동이 어렵습니다. 저도 늘 작심삼일이고요. 제가 이런 글을 쓰는 것도, 제 자신에게 자극을 주기 위해서입니다. 이 블로그를 운영하는 한가지 이유이기도 하고요.  
 
-끝으로, [Zen habits][1]라는 블로그의 [포스팅][2] 하나 공유합니다.
+끝으로, [Zen habits][1]라는 블로그의 [포스팅][2]글 하나 공유합니다. 바쁘신 분들은 아래 요약만 보세요.
 
-어메이징한 2015년을 만드는 5가지 아이디어
-1. 목표나 각오를 세우지 말고, 습관을 만들자. (한달에 1개씩)
-2. (1개의 습관들이기에) 전념을 다하자.
-3. (월이나 연단위가 아닌) 주단위로 점검하자. 
-4. 같이 할 수 있는 사람을 찾아라.
-5. (일년동안) 늘 호기심 많고, 배우고자 하는 자세를 유지하자.
+- 어메이징한 2015년을 만드는 5가지 아이디어
+	1. 목표나 각오를 세우지 말고, 습관을 만들자. (한달에 1개씩)
+	2. (1개의 습관들이기에) 전념을 다하자.
+	3. (월이나 연단위가 아닌) 주단위로 점검하자. 
+	4. 같이 할 수 있는 사람을 찾아라.
+	5. (일년동안) 늘 호기심 많고, 배우고자 하는 자세를 유지하자.
 
-5 Ideas to Create an Amazing 2015
-1. Create habits, not goals or resolutions.
-2. Be all in. 
-3. Focus on weekly adaptations. 
-4. Find your crew. 
-5. Fill your year with curiosity and a learning stance.
+- 5 Ideas to Create an Amazing 2015
+	1. Create habits, not goals or resolutions.
+	2. Be all in. 
+	3. Focus on weekly adaptations. 
+	4. Find your crew. 
+	5. Fill your year with curiosity and a learning stance.
 		
 출처 : Zen habits by Leo Babauta
 
