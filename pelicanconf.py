@@ -40,12 +40,8 @@ THEME = 'pelican-theme'
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 
-SLUGIFY_SOURCE = 'basename'
-
 ARTICLE_URL = 'posts/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{slug}.html'
-
-# SLUG_SUBSTITUTIONS = ('투자', 'investment')
 
 DATE_FORMATS = {
     'en': '%a, %d %b %Y',
